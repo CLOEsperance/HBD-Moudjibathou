@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joyeux Anniversaire Skalyne</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      background: url('https://source.unsplash.com/1600x900/?birthday,flowers') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      overflow-y: auto;
+      position: relative;
+      padding: 2rem 1rem;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+
+    .content {
+      z-index: 1;
+      padding: 1rem;
+      max-width: 800px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    .poeme {
+      font-size: 1.2rem;
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    .images {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem;
+      z-index: 1;
+      flex-wrap: wrap;
+    }
+
+    .images img {
+      height: 100px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      animation: sway 4s ease-in-out infinite;
+      max-width: 30%;
+    }
+
+    @keyframes sway {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: rgba(255, 255, 255, 0.8);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .poeme { font-size: 1rem; }
+      .images img { height: 80px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="content">
+    <h1>Joyeux anniversaire Skalyne 🎉💖</h1>
+
+    <div class="poeme">
+      <p>Je sais, j’arrive un peu en retard…</p>
+      <p>Mais pour une personne aussi chère que toi, mes vœux arrivent toujours avec le cœur. 🕊️</p>
+      <p>Que cette nouvelle année de ta vie soit remplie de lumière, de réussite, de santé, et de vrais sourires. 😊</p>
+      <p>Merci d’être cette belle âme qui inspire la joie autour d’elle.</p>
+<p>Tu comptes . 💛</p>
+      <p><strong>Joyeux anniversaire encore une fois, Skalyne !</strong></p>
+    </div>
+
+    <div class="images">
+      <img src="AR" alt="Image AR">
+      <img src="CL" alt="Image CL">
+      <img src="SL" alt="Image SL">
+    </div>
+  </div>
+
+  <audio id="musique" autoplay loop>
+    <source src="syka.mp3" type="audio/mpeg">
+    Ton navigateur ne supporte pas l'audio HTML5.
+  </audio>
+
+  <button onclick="document.getElementById('musique').currentTime=0; document.getElementById('musique').play();">🎵 Relancer la musique</button>
+
+  <script>
+    window.addEventListener('load', () => {
+      const audio = document.getElementById('musique');
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          console.log("Autoplay bloqué. L'utilisateur doit cliquer pour démarrer la musique.");
+        });
+      }
+    });
+  </script>
+</body>
+</html>
